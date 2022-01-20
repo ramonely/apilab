@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AwwService } from '../aww.service';
 import { Observable } from 'rxjs';
+import { Root } from 'aww';
 
 
 @Component({
@@ -11,20 +12,20 @@ import { Observable } from 'rxjs';
 })
 export class AwwThreadComponent implements OnInit {
 
-  public threadData: any;
+ threadData?: Root;
 
   constructor(private _aww: AwwService) { }
 
   GetAww(){
     this._aww.getThread().subscribe(
-      (response:any) => {
-        let postjson = JSON.parse(response)
-        this.threadData = postjson;
+      (response:Root) => {
+        this.threadData = response;
       }
+
     );
   }
 
-  ngOnInit(): void{  
+  ngOnInit(): void{  this.GetAww();
       
   }
 

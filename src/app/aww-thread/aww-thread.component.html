@@ -1,5 +1,5 @@
 
-    <div *ngFor ="let child of threadData">
+    <div *ngFor ="let child of threadData?.data?.children">
       <p >{{child.data?.title}}</p>
       <p><img src="{{child.data?.thumbnail}}"/></p>
       <p><a href="{{child.data?.url}}">View Post</a></p>
