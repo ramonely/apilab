@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class AwwService {
 
-  private url: string = "https://www.reddit.com/r/aww/.json";
+   url: string = "https://www.reddit.com/r/aww/.json";
 
   constructor(private http: HttpClient) { }
 
-  getThread(): Observable<any>{return this.http.get<any>(this.url);}
+  getThread(): Observable<any>{return this.http.get(this.url);}
 }
